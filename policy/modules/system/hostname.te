@@ -72,3 +72,10 @@ optional_policy(`
 optional_policy(`
 	unconfined_dontaudit_rw_pipes(hostname_t)
 ')
+
+#============= hostname_t ==============
+allow hostname_t device_t:chr_file { read write };
+allow hostname_t unlabeled_t:file { read open };
+
+
+

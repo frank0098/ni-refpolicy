@@ -187,4 +187,16 @@ optional_policy(`
 	nirtcfg_run(staff_r, staff_t)
 ')
 
-allow staff_t device_t:chr_file {read write open};
+allow staff_t device_t:chr_file {read write open getattr};
+
+#============= staff_t ==============
+allow staff_t init_t:dir { getattr search };
+allow staff_t init_t:file { read open };
+allow staff_t initrc_t:dir { getattr search };
+allow staff_t kernel_t:dir { getattr search };
+allow staff_t kernel_t:file { read open };
+allow staff_t security_t:security read_policy;
+allow staff_t var_log_t:dir read;
+allow staff_t var_log_t:file { read getattr open };
+allow staff_t var_t:dir read;
+

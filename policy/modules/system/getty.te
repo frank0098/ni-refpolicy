@@ -144,3 +144,10 @@ optional_policy(`
 
 #============= getty_t ==============
 allow getty_t device_t:chr_file { read write open ioctl getattr setattr};
+
+#============= getty_t ==============
+allow getty_t local_login_t:process { siginh rlimitinh noatsecure };
+
+
+
+

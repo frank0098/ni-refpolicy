@@ -744,7 +744,6 @@ interface(`selinux_unconfined',`
 	typeattribute $1 selinux_unconfined_type;
 ')
 
-##anyname(fsadm_t)
 interface(`anyname',`
 	gen_require(`
 		type security_t;

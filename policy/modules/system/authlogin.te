@@ -484,3 +484,12 @@ optional_policy(`
 
 #============= chkpwd_t ==============
 allow chkpwd_t device_t:chr_file { read write };
+
+#============= chkpwd_t ==============
+#allow chkpwd_t security_t:filesystem getattr;
+anyname(chkpwd_t);
+
+
+
+
+

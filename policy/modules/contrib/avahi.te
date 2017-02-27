@@ -115,3 +115,9 @@ optional_policy(`
 
 #============= avahi_t ==============
 allow avahi_t device_t:chr_file { read write open };
+#============= avahi_t ==============
+allow avahi_t init_t:fd use;
+
+
+
+

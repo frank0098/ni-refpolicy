@@ -51,6 +51,7 @@ allow mount_t tmpfs_t:dir write;
 allow mount_t unlabeled_t:file write;
 allow mount_t tmpfs_t:dir { create add_name };
 allow mount_t tmpfs_t:file { write create };
+allow mount_t debugfs_t:dir write;
 
 
 # setuid/setgid needed to mount cifs

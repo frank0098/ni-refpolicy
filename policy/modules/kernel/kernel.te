@@ -17,7 +17,7 @@ attribute can_load_kernmodule;
 attribute can_receive_kernel_messages;
 attribute can_dump_kernel;
 
-neverallow ~can_load_kernmodule self:capability sys_module;
+#neverallow ~can_load_kernmodule self:capability sys_module;
 
 # domains with unconfined access to kernel resources
 attribute kern_unconfined;

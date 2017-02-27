@@ -45,6 +45,9 @@ allow local_login_t sysadm_t:process { siginh rlimitinh noatsecure };
 
 ##============= local_login_t ==============
 ##allow local_login_t device_t:chr_file { read write ioctl };
+#============= local_login_t ==============
+allow local_login_t chkpwd_t:process { siginh rlimitinh noatsecure };
+allow local_login_t device_t:chr_file getattr;
 
 
 allow local_login_t self:unix_dgram_socket create_socket_perms;

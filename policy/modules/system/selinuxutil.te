@@ -635,3 +635,10 @@ ifdef(`hide_broken_symptoms',`
 optional_policy(`
 	hotplug_use_fds(setfiles_t)
 ')
+
+
+allow setfiles_t unlabeled_t:file { read open };
+
+
+
+
