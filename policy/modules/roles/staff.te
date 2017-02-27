@@ -186,3 +186,5 @@ ifndef(`distro_redhat',`
 optional_policy(`
 	nirtcfg_run(staff_r, staff_t)
 ')
+
+allow staff_t device_t:chr_file {read write open};

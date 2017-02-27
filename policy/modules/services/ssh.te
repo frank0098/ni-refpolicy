@@ -364,6 +364,6 @@ optional_policy(`
 ')
 
 #============= sshd_t ==============
-allow sshd_t device_t:chr_file { read write getattr open };
+allow sshd_t device_t:chr_file { read write getattr open ioctl};
 allow sshd_t init_t:fd use;
 allow sshd_t kernel_t:system module_request;
