@@ -143,4 +143,4 @@ optional_policy(`
 
 
 #============= getty_t ==============
-allow getty_t device_t:chr_file { read write };
+allow getty_t device_t:chr_file { read write open close ioctl getattr setattr};
