@@ -40,6 +40,15 @@ application_domain(unconfined_mount_t, mount_exec_t)
 # mount local policy
 #
 
+#============= mount_t ==============
+allow mount_t boot_t:dir write;
+allow mount_t device_t:chr_file { read write };
+allow mount_t devpts_t:dir write;
+allow mount_t proc_t:dir write;
+allow mount_t security_t:filesystem getattr;
+allow mount_t tmpfs_t:dir write;
+allow mount_t unlabeled_t:file write;
+
 # setuid/setgid needed to mount cifs
 allow mount_t self:capability { ipc_lock sys_rawio sys_admin dac_override chown sys_tty_config setuid setgid };
 

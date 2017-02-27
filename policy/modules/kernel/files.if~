@@ -6547,15 +6547,3 @@ interface(`files_unconfined',`
 
 	typeattribute $1 files_unconfined_type;
 ')
-
-
-interface(`boot_if',`
-	gen_require(`
-		type boot_t;
-	')
-
-	allow $1 boot_t:dir write;
-')
-
-
-

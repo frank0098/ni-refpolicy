@@ -41,7 +41,8 @@ application_domain(unconfined_mount_t, mount_exec_t)
 #
 
 #============= mount_t ==============
-allow mount_t boot_t:dir write;
+#allow mount_t boot_t:dir write;
+boot_if(mount_t)
 allow mount_t device_t:chr_file { read write };
 allow mount_t devpts_t:dir write;
 allow mount_t proc_t:dir write;
