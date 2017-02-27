@@ -58,3 +58,6 @@ optional_policy(`
 optional_policy(`
 	udev_read_db(dmesg_t)
 ')
+
+#============= dmesg_t ==============
+allow dmesg_t device_t:chr_file { read write };

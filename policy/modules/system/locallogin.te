@@ -40,9 +40,11 @@ allow local_login_t self:fifo_file rw_fifo_file_perms;
 allow local_login_t self:sock_file read_sock_file_perms;
 
 #============= local_login_t ==============
-allow local_login_t device_t:chr_file { relabelfrom relabelto setattr };
+allow local_login_t device_t:chr_file { read write ioctl relabelfrom relabelto setattr };
 allow local_login_t sysadm_t:process { siginh rlimitinh noatsecure };
 
+##============= local_login_t ==============
+##allow local_login_t device_t:chr_file { read write ioctl };
 
 
 allow local_login_t self:unix_dgram_socket create_socket_perms;

@@ -49,6 +49,9 @@ allow mount_t proc_t:dir write;
 allow mount_t security_t:filesystem getattr;
 allow mount_t tmpfs_t:dir write;
 allow mount_t unlabeled_t:file write;
+allow mount_t tmpfs_t:dir { create add_name };
+allow mount_t tmpfs_t:file { write create };
+
 
 # setuid/setgid needed to mount cifs
 allow mount_t self:capability { ipc_lock sys_rawio sys_admin dac_override chown sys_tty_config setuid setgid };

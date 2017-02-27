@@ -744,12 +744,16 @@ interface(`selinux_unconfined',`
 	typeattribute $1 selinux_unconfined_type;
 ')
 
-##anyname(fsadm_t)
 interface(`anyname',`
 	gen_require(`
 		type security_t;
 	')
-
-	##typeattribute $1 selinux_unconfined_type;
 	allow $1 security_t:filesystem getattr;
+')
+
+interface(`sysadm_security',`
+	gen_require(`
+		type security_t;
+	')
+	allow $1 security_t:security read_policy;
 ')

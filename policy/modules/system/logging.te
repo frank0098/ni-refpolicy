@@ -539,4 +539,6 @@ optional_policy(`
 ')
 
 #============= syslogd_t ==============
-allow syslogd_t device_t:chr_file { read write ioctl };
+allow syslogd_t device_t:chr_file { read write ioctl getattr open  };
+#============= syslogd_t ==============
+allow syslogd_t syslogd_var_run_t:sock_file create;

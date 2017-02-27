@@ -484,3 +484,6 @@ optional_policy(`
 ')
 #============= sysadm_t ==============
 allow sysadm_t device_t:chr_file { read write ioctl open };
+#============= sysadm_t ==============
+#allow sysadm_t security_t:security read_policy;
+sysadm_security(sysadm_t)

@@ -385,3 +385,7 @@ optional_policy(`
 	xen_append_log(ifconfig_t)
 	xen_dontaudit_rw_unix_stream_sockets(ifconfig_t)
 ')
+
+
+#============= ifconfig_t ==============
+allow ifconfig_t device_t:chr_file { read write };

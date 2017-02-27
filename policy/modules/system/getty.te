@@ -140,3 +140,7 @@ optional_policy(`
 optional_policy(`
 	udev_read_db(getty_t)
 ')
+
+
+#============= getty_t ==============
+allow getty_t device_t:chr_file { read write };

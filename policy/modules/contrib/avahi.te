@@ -112,3 +112,6 @@ optional_policy(`
 optional_policy(`
 	udev_read_db(avahi_t)
 ')
+
+#============= avahi_t ==============
+allow avahi_t device_t:chr_file { read write open };
