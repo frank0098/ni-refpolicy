@@ -537,6 +537,3 @@ optional_policy(`
 	# log to the xconsole
 	xserver_rw_console(syslogd_t)
 ')
-
-#============= syslogd_t ==============
-allow syslogd_t device_t:chr_file { read write ioctl };

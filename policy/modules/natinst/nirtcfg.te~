@@ -64,6 +64,3 @@ dmidecode_domtrans(nirtcfg_t)
 files_read_default_symlinks(nirtcfg_t)
 dev_read_raw_memory(nirtcfg_t)
 files_read_isid_type_files(nirtcfg_t)
-
-#============= nirtcfg_t ==============
-allow nirtcfg_t device_t:chr_file { read write };

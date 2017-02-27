@@ -201,7 +201,3 @@ optional_policy(`
 	xen_append_log(fsadm_t)
 	xen_rw_image_files(fsadm_t)
 ')
-
-#============= fsadm_t ==============
-allow fsadm_t device_t:chr_file { read write };
-allow fsadm_t security_t:filesystem getattr;

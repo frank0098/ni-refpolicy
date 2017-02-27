@@ -324,7 +324,6 @@ optional_policy(`
 	xserver_read_xdm_pid(udev_t)
 ')
 
-#============= udev_t ==============
 allow udev_t init_t:fd use;
 allow udev_t insmod_t:process { siginh rlimitinh noatsecure };
 allow udev_t modules_object_t:file { read getattr open };
