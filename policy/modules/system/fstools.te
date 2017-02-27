@@ -204,4 +204,9 @@ optional_policy(`
 
 #============= fsadm_t ==============
 allow fsadm_t device_t:chr_file { read write };
-allow fsadm_t security_t:filesystem getattr;
+
+##allow fsadm_t security_t:filesystem getattr;
+anyname(fsadm_t)
+
+
+

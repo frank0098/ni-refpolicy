@@ -1,8 +1,6 @@
 *.pp
 *.py[co]
 *.res
-*.te~
-*.conf~
 
 /base.conf
 /base.fc
