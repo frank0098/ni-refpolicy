@@ -119,7 +119,8 @@ optional_policy(`
 
 optional_policy(`
 	bootloader_run(sysadm_t, sysadm_r)
-')_policy(`
+')
+optional_policy(`
 	certwatch_run(sysadm_t, sysadm_r)
 ')
 
