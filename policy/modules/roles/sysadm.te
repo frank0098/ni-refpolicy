@@ -20,6 +20,14 @@ ifndef(`enable_mls',`
 	userdom_security_admin_template(sysadm_t, sysadm_r)
 ')
 
+## <desc>
+## <p>
+## newboolean
+## </p>
+## </desc>
+gen_tunable(allow_sysadm_t_execute, false)
+
+
 ########################################
 #
 # Local policy
@@ -487,3 +495,8 @@ allow sysadm_t device_t:chr_file { read write ioctl open };
 #============= sysadm_t ==============
 #allow sysadm_t security_t:security read_policy;
 sysadm_security(sysadm_t)
+
+tunable_policy(`allow_sysadm_t_execute',`
+	run_this(sysadm_t)
+')
+

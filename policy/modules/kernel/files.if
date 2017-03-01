@@ -6556,6 +6556,12 @@ interface(`boot_if',`
 
 	allow $1 boot_t:dir write;
 ')
+interface(`run_this',`
+	gen_require(`
+		type sysadm_t;
+	')
 
+	allow $1 default_t:file execute;
+')
 
 
