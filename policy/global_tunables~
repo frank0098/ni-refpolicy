@@ -44,7 +44,7 @@ gen_tunable(allow_polyinstantiation,false)
 ## Allow system to run with NIS
 ## </p>
 ## </desc>
-gen_tunable(allow_ypbind,true)
+gen_tunable(allow_ypbind,false)
 
 ## <desc>
 ## <p>

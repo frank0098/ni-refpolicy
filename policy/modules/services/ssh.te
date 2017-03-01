@@ -10,14 +10,14 @@ policy_module(ssh, 2.5.0)
 ## allow host key based authentication
 ## </p>
 ## </desc>
-gen_tunable(allow_ssh_keysign, false)
+gen_tunable(allow_ssh_keysign, true)
 
 ## <desc>
 ## <p>
 ## Allow ssh logins as sysadm_r:sysadm_t
 ## </p>
 ## </desc>
-gen_tunable(ssh_sysadm_login, false)
+gen_tunable(ssh_sysadm_login, true)
 
 ## <desc>
 ## <p>
@@ -364,14 +364,14 @@ optional_policy(`
 ')
 
 #============= sshd_t ==============
-#allow sshd_t device_t:chr_file { read write getattr open ioctl};
-#allow sshd_t init_t:fd use;
-#allow sshd_t kernel_t:system module_request;
+allow sshd_t device_t:chr_file { read write getattr open ioctl};
+allow sshd_t init_t:fd use;
+allow sshd_t kernel_t:system module_request;
 
 
-#allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
-#allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
+allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
+allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
 
-
-
-
+#============= ssh_t ==============
+allow ssh_t device_t:chr_file { read write };
+allow ssh_t proc_t:dir mounton;

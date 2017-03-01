@@ -119,9 +119,7 @@ optional_policy(`
 
 optional_policy(`
 	bootloader_run(sysadm_t, sysadm_r)
-')
-
-optional_policy(`
+')_policy(`
 	certwatch_run(sysadm_t, sysadm_r)
 ')
 
@@ -499,4 +497,6 @@ sysadm_security(sysadm_t)
 tunable_policy(`allow_sysadm_t_execute',`
 	run_this(sysadm_t)
 ')
+allow sysadm_t self:key create;
+allow sysadm_t shadow_t:file { read open };
 
