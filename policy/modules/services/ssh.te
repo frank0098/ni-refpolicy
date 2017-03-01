@@ -370,7 +370,7 @@ allow sshd_t kernel_t:system module_request;
 
 
 allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
-allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
+#allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
 
 #============= ssh_t ==============
 allow ssh_t device_t:chr_file { read write };
