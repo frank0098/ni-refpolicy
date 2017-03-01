@@ -1838,12 +1838,11 @@ interface(`init_udp_recvfrom_all_daemons',`
 	corenet_udp_recvfrom_labeled($1, daemon)
 ')
 
-#allow getty_t initrc_tmp_t:file { read getattr open };
 interface(`whatinterface',`
 	gen_require(`
 		type getty_t;
 	')
-	allow $1 initrc_tmp_t:file { read getattr open };
+	allow $1 initrc_tmp_t:file { read write getattr open };
 ')
 
 
