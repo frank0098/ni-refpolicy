@@ -373,5 +373,5 @@ allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
 #allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
 
 #============= ssh_t ==============
-allow ssh_t device_t:chr_file { read write };
+allow ssh_t device_t:chr_file {open read write };
 allow ssh_t proc_t:dir mounton;
