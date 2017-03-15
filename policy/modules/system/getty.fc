@@ -1,5 +1,5 @@
 
-/etc/mgetty(/.*)?		gen_context(system_u:object_r:getty_etc_t,s0)
+/etc/mgetty(/.*)?		gen_scontext(system_u:object_r:getty_etc_t,s0)
 
 /sbin/.*getty		--	gen_context(system_u:object_r:getty_exec_t,s0)
 
