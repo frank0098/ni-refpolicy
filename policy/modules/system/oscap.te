@@ -1,0 +1,16 @@
+policy_module(oscap, 1.0.0)
+
+########################################
+#
+# Declarations
+#
+
+
+
+type oscap_t;
+domain_type(oscap_t)
+role system_r types oscap_t;
+
+type oscap_exec_t;
+domain_entry_file(osacp_t, oscap_exec_t)
+
