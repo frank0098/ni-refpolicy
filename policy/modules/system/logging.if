@@ -1097,3 +1097,29 @@ interface(`logging_admin',`
 	logging_admin_audit($1, $2)
 	logging_admin_syslog($1, $2)
 ')
+
+
+
+
+
+#####################################
+#allow oscap_t devlog_t:sock_file write;
+interface(`oscap_devlog',`
+	gen_require(`
+		type devlog_t;
+	')
+
+	allow $1 devlog_t:sock_file write;
+')
+
+
+#allow oscap_t syslogd_t:unix_stream_socket connectto;
+interface(`oscap_syslogd',`
+	gen_require(`
+		type syslogd_t;
+	')
+
+	allow $1 syslogd_t:unix_stream_socket connectto;
+')
+
+

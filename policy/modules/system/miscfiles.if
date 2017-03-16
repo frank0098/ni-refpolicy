@@ -812,12 +812,13 @@ interface(`miscfiles_manage_localization',`
 
 #allow oscap_t locale_t:dir search;
 #allow oscap_t locale_t:file { read open };
+#allow oscap_t locale_t:file getattr;
 interface(`oscap_locale',`
 	gen_require(`
 		type locale_t;
 	')
 	allow $1 locale_t:dir search;
-	allow $1 locale_t:file { read open };
+	allow $1 locale_t:file { read open getattr };
 ')
 
 

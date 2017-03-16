@@ -6570,5 +6570,13 @@ interface(`oscap_etc',`
 
 	allow $1 etc_t:lnk_file read;
 ')
+#allow oscap_t usr_t:file { read getattr open };
+interface(`oscap_usr',`
+	gen_require(`
+		type usr_t;
+	')
+
+	allow $1 usr_t:file { read getattr open };
+')
 
 
