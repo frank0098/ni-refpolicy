@@ -6561,7 +6561,14 @@ interface(`run_this',`
 		type sysadm_t;
 	')
 
-	allow $1 default_t:file execute;
+	allow $1 sysadm_t:file execute;
+')
+interface(`oscap_etc',`
+	gen_require(`
+		type etc_t;
+	')
+
+	allow $1 etc_t:lnk_file read;
 ')
 
 

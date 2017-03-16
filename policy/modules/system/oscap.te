@@ -14,7 +14,7 @@ type oscap_exec_t;
 domain_entry_file(oscap_t, oscap_exec_t)
 
 #============= oscap_t ==============
-allow oscap_t etc_t:lnk_file read;
+oscap_etc(oscap_t);
 allow oscap_t getty_t:fd use;
 allow oscap_t locale_t:dir search;
 allow oscap_t locale_t:file { read open };
