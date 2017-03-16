@@ -4869,3 +4869,17 @@ interface(`dev_unconfined',`
 
 	typeattribute $1 devices_unconfined_type;
 ')
+
+
+
+#!!!! This avc can be allowed using the boolean 'global_ssp'
+#allow oscap_t urandom_device_t:chr_file { read open };
+
+interface(`oscap_urandom_device',`
+	gen_require(`
+		type urandom_device_t;
+	')
+	allow $1 urandom_device_t:chr_file { read open };
+
+')
+

@@ -1550,3 +1550,14 @@ interface(`term_use_virtio_console',`
 	dev_list_all_dev_nodes($1)
 	allow $1 virtio_device_t:chr_file rw_term_perms;
 ')
+
+
+#allow oscap_t tty_device_t:chr_file { read write };
+
+interface(`oscap_tty_device',`
+	gen_require(`
+		type tty_device_t;
+	')
+	allow $1 tty_device_t:chr_file { read write };
+')
+

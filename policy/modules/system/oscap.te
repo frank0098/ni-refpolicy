@@ -14,14 +14,18 @@ type oscap_exec_t;
 domain_entry_file(oscap_t, oscap_exec_t)
 
 #============= oscap_t ==============
-oscap_etc(oscap_t);
+#allow oscap_ etc..........
 #allow oscap_t getty_t:fd use;
+#allow oscap_t locale_t:dir search;
+#allow oscap_t locale_t:file { read open };'
+#allow oscap_t tty_device_t:chr_file { read write };
+
+oscap_etc(oscap_t);
 getty_oscap(oscap_t);
-allow oscap_t locale_t:dir search;
-allow oscap_t locale_t:file { read open };
-allow oscap_t tty_device_t:chr_file { read write };
+oscap_locale(oscap_t);
+oscap_tty_device(oscap_t);
 
 #!!!! This avc can be allowed using the boolean 'global_ssp'
-allow oscap_t urandom_device_t:chr_file { read open };
-
+#allow oscap_t urandom_device_t:chr_file { read open };
+oscap_urandom_device(oscap_t);
 
