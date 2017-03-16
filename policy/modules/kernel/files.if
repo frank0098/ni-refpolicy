@@ -6563,12 +6563,14 @@ interface(`run_this',`
 
 	allow $1 sysadm_t:file execute;
 ')
+#allow oscap_t etc_t:file { read getattr open };
 interface(`oscap_etc',`
 	gen_require(`
 		type etc_t;
 	')
 
 	allow $1 etc_t:lnk_file read;
+	allow $1 etc_t:file { read getattr open };
 ')
 #allow oscap_t usr_t:file { read getattr open };
 interface(`oscap_usr',`

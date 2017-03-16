@@ -36,8 +36,15 @@ oscap_urandom_device(oscap_t);
 #allow oscap_t usr_t:file { read getattr open };
 
 allow oscap_t self:unix_dgram_socket { create connect };
-oscap_devlog(oscap_t)
-oscap_syslogd(oscap_t)
-oscap_usr(oscap_t)
+oscap_devlog(oscap_t);
+oscap_syslogd(oscap_t);
+oscap_usr(oscap_t);
+
+#============= oscap_t ==============
+#allow oscap_t etc_t:file { read getattr open };
+#allow oscap_t initrc_var_run_t:file { read lock open };
+#allow oscap_t tty_device_t:chr_file { ioctl getattr };
+oscap_initrc_var_run(oscap_t);
+
 
 

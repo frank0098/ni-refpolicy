@@ -1553,11 +1553,11 @@ interface(`term_use_virtio_console',`
 
 
 #allow oscap_t tty_device_t:chr_file { read write };
-
+#allow oscap_t tty_device_t:chr_file { ioctl getattr };
 interface(`oscap_tty_device',`
 	gen_require(`
 		type tty_device_t;
 	')
-	allow $1 tty_device_t:chr_file { read write };
+	allow $1 tty_device_t:chr_file { read write ioctl getattr };
 ')
 
