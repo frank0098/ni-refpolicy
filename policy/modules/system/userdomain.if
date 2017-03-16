@@ -3473,7 +3473,7 @@ interface(`oscap_user_home',`
 	gen_require(`
 		type user_home_t;
 	')
-	allow $1 user_home_t:file { write open };
+	allow $1 user_home_t:file { write open getattr };
 ')
 
 
