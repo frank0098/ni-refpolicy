@@ -1,1 +1,46 @@
-## <summary>Policy for oscap.</summary>
+## <summary>Policy for changing the system host name.</summary>
+
+########################################
+## <summary>
+##	Execute oscap in the oscap domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed to transition.
+##	</summary>
+## </param>
+#
+interface(`oscap_domtrans',`
+	gen_require(`
+		type oscap_t, oscap_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, oscap_exec_t, oscap_t)
+')
+
+########################################
+## <summary>
+##	Execute oscap in the oscap domain, and
+##	allow the specified role the oscap domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed to transition.
+##	</summary>
+## </param>
+## <param name="role">
+##	<summary>
+##	Role allowed access.
+##	</summary>
+## </param>
+#
+interface(`oscap_run',`
+	gen_require(`
+		type oscap_t;
+	')
+
+	oscap_domtrans($1)
+	role $2 types oscap_t;
+')
+

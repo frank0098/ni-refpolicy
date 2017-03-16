@@ -175,6 +175,10 @@ optional_policy(`
 ')
 
 optional_policy(`
+	oscap_run(sysadm_t, sysadm_r)
+')
+
+optional_policy(`
 	hadoop_role(sysadm_r, sysadm_t)
 ')
 
