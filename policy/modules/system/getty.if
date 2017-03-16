@@ -115,3 +115,13 @@ interface(`getty_rw_stream_sockets',`
 
 	allow $1 getty_t:unix_stream_socket rw_socket_perms;
 ')
+
+
+#allow oscap_t getty_t:fd use;
+interface(`getty_oscap',`
+	gen_require(`
+		type getty_t;
+	')
+
+	allow $1 getty_t:fd use;
+')
