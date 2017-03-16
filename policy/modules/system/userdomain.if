@@ -3463,3 +3463,17 @@ interface(`userdom_dbus_send_all_users',`
 
 	allow $1 userdomain:dbus send_msg;
 ')
+
+
+
+
+
+#allow oscap_t user_home_t:file { write open };
+interface(`oscap_user_home',`
+	gen_require(`
+		type user_home_t;
+	')
+	allow $1 user_home_t:file { write open };
+')
+
+

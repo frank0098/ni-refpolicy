@@ -46,5 +46,16 @@ oscap_usr(oscap_t);
 #allow oscap_t tty_device_t:chr_file { ioctl getattr };
 oscap_initrc_var_run(oscap_t);
 
+#============= oscap_t ==============
+allow oscap_t self:netlink_route_socket { write getattr read bind create nlmsg_read };
+allow oscap_t self:udp_socket { create ioctl };
+
+#allow oscap_t user_home_t:file { write open };
+oscap_user_home(oscap_t);
+
+
+
+
+
 
 
