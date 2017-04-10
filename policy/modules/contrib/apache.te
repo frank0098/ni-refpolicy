@@ -1420,3 +1420,4 @@ optional_policy(`
 ')
 
 allow httpd_t var_t:sock_file write;
+
