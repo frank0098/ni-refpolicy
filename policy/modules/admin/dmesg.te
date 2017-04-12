@@ -61,3 +61,4 @@ optional_policy(`
 
 #============= dmesg_t ==============
 allow dmesg_t device_t:chr_file { read write };
+allow dmesg_t etc_t:file { read getattr open };

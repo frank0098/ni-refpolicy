@@ -545,4 +545,6 @@ allow syslogd_t syslogd_var_run_t:sock_file create;
 #============= auditctl_t ============== 
 allow auditctl_t device_t:chr_file { read write getattr ioctl };
 #============= auditd_t ==============
-allow auditd_t device_t:chr_file { read write };
+allow auditd_t device_t:chr_file { open read write };
+#============= audisp_t ============== 
+allow audisp_t device_t:chr_file { read write }; 
