@@ -1421,9 +1421,6 @@ optional_policy(`
 
 
  #============= httpd_t ============== 
-allow httpd_t var_t:sock_file write;
-allow httpd_t device_t:chr_file { read write open }; 
-allow httpd_t usr_t:file { execute execute_no_trans }; 
-allow httpd_t var_t:file getattr; 
-allow httpd_t var_t:sock_file write;
-
+allow httpd_t device_t:chr_file { read write open };
+allow httpd_t var_t:file { create open append getattr execute execute_no_trans }; 
+allow httpd_t var_t:sock_file { create setattr write };

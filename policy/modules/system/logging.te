@@ -542,3 +542,6 @@ optional_policy(`
 allow syslogd_t device_t:chr_file { read write ioctl getattr open  };
 #============= syslogd_t ==============
 allow syslogd_t syslogd_var_run_t:sock_file create;
+#============= auditctl_t ============== 
+allow auditctl_t device_t:chr_file { read write getattr ioctl };
+

@@ -280,3 +280,7 @@ optional_policy(`
 optional_policy(`
 	nscd_use(sulogin_t)
 ')
+
+#============= local_login_t ============== 
+allow local_login_t var_log_t:dir { write add_name }; 
+allow local_login_t var_log_t:file { read write create open getattr };
