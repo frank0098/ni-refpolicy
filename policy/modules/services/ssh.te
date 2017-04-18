@@ -377,3 +377,5 @@ allow ssh_t device_t:chr_file {open read write getattr ioctl  };
 allow ssh_t proc_t:dir mounton;
 
 
+
+
