@@ -367,6 +367,7 @@ optional_policy(`
 allow sshd_t device_t:chr_file { read write getattr open ioctl};
 allow sshd_t init_t:fd use;
 allow sshd_t kernel_t:system module_request;
+allow sshd_t var_log_t:dir write;
 allow sshd_t var_log_t:file { read write getattr open }; 
 allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
 #allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
@@ -374,4 +375,5 @@ allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
 #============= ssh_t ==============
 allow ssh_t device_t:chr_file {open read write getattr ioctl  };
 allow ssh_t proc_t:dir mounton;
+
 
