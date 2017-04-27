@@ -1425,5 +1425,6 @@ allow httpd_t device_t:chr_file { read write open };
 allow httpd_t var_t:file { create open append getattr execute execute_no_trans }; 
 allow httpd_t var_t:sock_file { create setattr write unlink };
 allow httpd_t usr_t:file { execute execute_no_trans };
+
 #need to replace with proper rules later
 allow httpd_t unlabeled_t:packet send;

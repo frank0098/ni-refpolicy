@@ -372,9 +372,15 @@ allow sshd_t var_log_t:file { read write getattr open };
 allow sshd_t chkpwd_t:process { siginh rlimitinh noatsecure };
 #allow sshd_t staff_t:process { siginh rlimitinh noatsecure };
 
+allow sshd_t unlabeled_t:packet { recv send };
+allow sshd_t var_log_t:dir add_name;
+allow sshd_t var_log_t:file create;
+
+
 #============= ssh_t ==============
 allow ssh_t device_t:chr_file {open read write getattr ioctl  };
 allow ssh_t proc_t:dir mounton;
+
 
 
 
