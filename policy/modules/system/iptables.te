@@ -149,3 +149,7 @@ optional_policy(`
 optional_policy(`
 	udev_read_db(iptables_t)
 ')
+
+
+#iptables###
+allow iptables_t device_t:chr_file {read write getattr ioctl};
