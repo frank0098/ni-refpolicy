@@ -505,4 +505,4 @@ tunable_policy(`allow_sysadm_t_execute',`
 allow sysadm_t self:key create;
 allow sysadm_t shadow_t:file { read open };
 allow sysadm_t unlabeled_t:packet send;
-allow sysadm_t httpd_modules_t:file execute;
+#allow sysadm_t httpd_modules_t:file execute;
