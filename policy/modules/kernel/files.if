@@ -6578,10 +6578,9 @@ interface(`oscap_usr',`
 		type usr_t;
 	')
 
-	allow $1 usr_t:file { read getattr open };
+	allow $1 usr_t:file { read getattr open write create };
+	allow $1 usr_t:dir { write read add_name };
 ')
-
-
 
 
 
@@ -6615,12 +6614,4 @@ interface(`oscap_system_map',`
 			
 
 
-interface(`oscap_usr',`
-	gen_require(`
-		type usr_t;
-	')
-		allow $1 usr_t:dir { write read add_name };
-	allow $1 usr_t:file { write create };
-
-')
-			
+		
