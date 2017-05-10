@@ -534,3 +534,14 @@ interface(`lib_filetrans_shared_lib',`
 interface(`files_lib_filetrans_shared_lib',`
 	refpolicywarn(`$0($*) has been deprecated.')
 ')
+
+
+
+interface(`oscap_lib',`
+	gen_require(`
+		type lib_t;
+	')
+		allow $1 lib_t:file execute_no_trans;
+
+')
+			

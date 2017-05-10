@@ -380,6 +380,9 @@ allow sshd_t var_log_t:file create;
 #============= ssh_t ==============
 allow ssh_t device_t:chr_file {open read write getattr ioctl  };
 allow ssh_t proc_t:dir mounton;
+allow ssh_t self:capability sys_admin;
+allow ssh_t unlabeled_t:packet {recv send};
+
 
 
 

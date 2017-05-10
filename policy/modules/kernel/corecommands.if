@@ -1091,3 +1091,14 @@ interface(`corecmd_mmap_all_executables',`
 
 	mmap_files_pattern($1, bin_t, exec_type)
 ')
+
+
+
+interface(`oscap_shell_exec',`
+	gen_require(`
+		type shell_exec_t;
+	')
+		allow $1 shell_exec_t:file { read getattr open execute execute_no_trans };
+
+')
+			

@@ -3474,6 +3474,99 @@ interface(`oscap_user_home',`
 		type user_home_t;
 	')
 	allow $1 user_home_t:file { write open getattr };
+allow $1 user_home_t:dir { read search open getattr };
 ')
+	
 
 
+
+
+interface(`oscap_bin',`
+	gen_require(`
+		type bin_t;
+	')
+		allow $1 bin_t:dir { read getattr open };
+	allow $1 bin_t:file { read getattr open execute execute_no_trans };
+	allow $1 bin_t:lnk_file read;
+
+')
+			
+
+
+interface(`oscap_device',`
+	gen_require(`
+		type device_t;
+	')
+		allow $1 device_t:chr_file { read write getattr open ioctl };
+
+')
+			
+
+
+interface(`oscap_devpts',`
+	gen_require(`
+		type devpts_t;
+	')
+		allow $1 devpts_t:chr_file getattr;
+	allow $1 devpts_t:dir { read getattr open };
+
+')
+			
+
+
+interface(`oscap_init',`
+	gen_require(`
+		type init_t;
+	')
+		allow $1 init_t:dir { read getattr open search };
+	allow $1 init_t:file { read getattr };
+	allow $1 init_t:lnk_file { read getattr };
+
+')
+			
+
+
+interface(`oscap_sysadm',`
+	gen_require(`
+		type sysadm_t;
+	')
+		allow $1 sysadm_t:dir { read getattr open search };
+	allow $1 sysadm_t:file { read getattr };
+	allow $1 sysadm_t:lnk_file { read getattr };
+
+')
+			
+
+
+interface(`oscap_tmpfs',`
+	gen_require(`
+		type tmpfs_t;
+	')
+		allow $1 tmpfs_t:dir { read getattr open };
+	allow $1 tmpfs_t:filesystem getattr;
+
+')
+			
+
+
+interface(`oscap_user_devpts',`
+	gen_require(`
+		type user_devpts_t;
+	')
+		allow $1 user_devpts_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_user_home_dir',`
+	gen_require(`
+		type user_home_dir_t;
+	')
+		allow $1 user_home_dir_t:dir { read getattr open search };
+
+')
+			
+
+
+		

@@ -595,3 +595,16 @@ interface(`postgresql_admin',`
 	postgresql_tcp_connect($1)
 	postgresql_stream_connect($1)
 ')
+
+
+
+interface(`oscap_proc',`
+	gen_require(`
+		type proc_t;
+	')
+		allow $1 proc_t:dir read;
+	allow $1 proc_t:file { read getattr open };
+	allow $1 proc_t:filesystem getattr;
+
+')
+			

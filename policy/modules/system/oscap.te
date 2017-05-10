@@ -15,12 +15,6 @@ type oscap_exec_t;
 domain_entry_file(oscap_t, oscap_exec_t)
 
 #============= oscap_t ==============
-#allow oscap_ etc..........
-#allow oscap_t getty_t:fd use;
-#allow oscap_t locale_t:dir search;
-#allow oscap_t locale_t:file { read open };'
-#allow oscap_t tty_device_t:chr_file { read write };
-
 oscap_etc(oscap_t);
 getty_oscap(oscap_t);
 oscap_locale(oscap_t);
@@ -37,23 +31,89 @@ oscap_urandom_device(oscap_t);
 #allow oscap_t usr_t:file { read getattr open };
 
 allow oscap_t self:unix_dgram_socket { create connect };
+allow oscap_t self:netlink_route_socket { write getattr read bind create nlmsg_read
 oscap_devlog(oscap_t);
 oscap_syslogd(oscap_t);
 oscap_usr(oscap_t);
 
-#============= oscap_t ==============
-#allow oscap_t etc_t:file { read getattr open };
-#allow oscap_t initrc_var_run_t:file { read lock open };
-#allow oscap_t tty_device_t:chr_file { ioctl getattr };
-oscap_initrc_var_run(oscap_t);
+
 
 #============= oscap_t ==============
-allow oscap_t self:netlink_route_socket { write getattr read bind create nlmsg_read };
-allow oscap_t self:udp_socket { create ioctl };
 
-#allow oscap_t user_home_t:file { write open };
+oscap_auditd_etc(oscap_t);
+oscap_auditd_exec(oscap_t);
+oscap_auditd_etc(oscap_t);
+oscap_auditd_log(oscap_t);
+oscap_auditd(oscap_t);
+oscap_avahi_exec(oscap_t);
+oscap_avahi(oscap_t);
+oscap_bin(oscap_t);
+oscap_cert(oscap_t);
+oscap_clock_device(oscap_t);
+oscap_cron_spool(oscap_t);
+oscap_crond_exec(oscap_t);
+oscap_crond(oscap_t);
+oscap_dbusd_etc(oscap_t);
+oscap_dbusd_exec(oscap_t);
+oscap_debugfs(oscap_t);
+oscap_default(oscap_t);
+oscap_device(oscap_t);
+oscap_devpts(oscap_t);
+oscap_fixed_disk_device(oscap_t);
+oscap_getty_exec(oscap_t);
+oscap_getty(oscap_t);
+oscap_home_root(oscap_t);
+oscap_httpd_config(oscap_t);
+oscap_httpd_exec(oscap_t);
+oscap_init_exec(oscap_t);
+oscap_init(oscap_t);
+oscap_initctl(oscap_t);
+oscap_initrc(oscap_t);
+oscap_kernel(oscap_t);
+oscap_lastlog(oscap_t);
+oscap_lib(oscap_t);
+oscap_local_login(oscap_t);
+oscap_login_exec(oscap_t);
+oscap_modules_conf(oscap_t);
+oscap_mouse_device(oscap_t);
+oscap_net_conf(oscap_t);
+oscap_proc_kmsg(oscap_t);
+oscap_proc_net(oscap_t);
+oscap_proc(oscap_t);
+oscap_se(oscap_t);
+oscap_shadow(oscap_t);
+oscap_shell_exec(oscap_t);
+oscap_sshd_exec(oscap_t);
+oscap_sysadm(oscap_t);
+oscap_sysctl_dev(oscap_t);
+oscap_sysctl_fs(oscap_t);
+oscap_sysctl_hotplug(oscap_t);
+oscap_sysctl_irq(oscap_t);
+oscap_sysctl_kernel(oscap_t);
+oscap_sysctl_modprobe(oscap_t);
+oscap_sysctl_net(oscap_t);
+oscap_sysctl_net_unix(oscap_t);
+oscap_sysctl_rpc(oscap_t);
+oscap_sysctl(oscap_t);
+oscap_sysctl_vm(oscap_t);
+oscap_sysfs(oscap_t);
+oscap_syslogd_exec(oscap_t);
+oscap_syslogd_var_run(oscap_t);
+oscap_system_dbusd(oscap_t);
+oscap_system_dbusd_var_run(oscap_t);
+oscap_system_map(oscap_t);
+oscap_tmp(oscap_t);
+oscap_tmpfs(oscap_t);
+oscap_udev_exec(oscap_t);
+oscap_udev(oscap_t);
+oscap_udev_tbl(oscap_t);
+oscap_usb_device(oscap_t);
+oscap_user_devpts(oscap_t);
+oscap_user_home_dir(oscap_t);
 oscap_user_home(oscap_t);
-
+oscap_usr(oscap_t);
+oscap_var_log(oscap_t);
+oscap_xconsole_device(oscap_t);
 
 
 

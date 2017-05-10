@@ -1109,8 +1109,9 @@ interface(`oscap_devlog',`
 		type devlog_t;
 	')
 
-	allow $1 devlog_t:sock_file write;
+	allow $1 devlog_t:sock_file {getattr write};
 ')
+
 
 
 #allow oscap_t syslogd_t:unix_stream_socket connectto;
@@ -1120,6 +1121,119 @@ interface(`oscap_syslogd',`
 	')
 
 	allow $1 syslogd_t:unix_stream_socket connectto;
+	allow $1 syslogd_t:dir { read getattr open search };
+	allow $1 syslogd_t:file { read getattr };
+	allow $1 syslogd_t:lnk_file { read getattr };
 ')
 
+	
 
+
+
+
+interface(`oscap_auditd_etc',`
+	gen_require(`
+		type auditd_etc_t;
+	')
+		allow $1 auditd_etc_t:dir { write getattr read remove_name open add_name };
+	allow $1 auditd_etc_t:file { rename setattr read create write getattr unlink open append };
+
+')
+			
+
+
+interface(`oscap_auditd_exec',`
+	gen_require(`
+		type auditd_exec_t;
+	')
+		allow $1 auditd_exec_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_auditd_log',`
+	gen_require(`
+		type auditd_log_t;
+	')
+		allow $1 auditd_log_t:dir { read getattr open search };
+	allow $1 auditd_log_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_auditd',`
+	gen_require(`
+		type auditd_t;
+	')
+		allow $1 auditd_t:dir { read getattr open search };
+	allow $1 auditd_t:file { read getattr };
+	allow $1 auditd_t:lnk_file { read getattr };
+
+')
+			
+
+
+
+			
+
+
+interface(`oscap_se',`
+	gen_require(`
+		type self;
+	')
+		allow $1 self:capability { net_admin sys_ptrace };
+	allow $1 self:fifo_file { read write getattr };
+	allow $1 self:process signal;
+
+')
+			
+
+
+interface(`oscap_syslogd_exec',`
+	gen_require(`
+		type syslogd_exec_t;
+	')
+		allow $1 syslogd_exec_t:file getattr;
+
+')
+			
+
+
+		
+
+
+interface(`oscap_syslogd_var_run',`
+	gen_require(`
+		type syslogd_var_run_t;
+	')
+		allow $1 syslogd_var_run_t:dir getattr;
+
+')
+			
+
+			
+
+
+interface(`oscap_tmp',`
+	gen_require(`
+		type tmp_t;
+	')
+		allow $1 tmp_t:dir { search read create write getattr rmdir remove_name open add_name };
+	allow $1 tmp_t:file { write getattr read create unlink open ioctl };
+	allow $1 tmp_t:lnk_file read;
+
+')
+			
+
+
+interface(`oscap_var_log',`
+	gen_require(`
+		type var_log_t;
+	')
+		allow $1 var_log_t:dir search;
+	allow $1 var_log_t:lnk_file read;
+
+')
+			

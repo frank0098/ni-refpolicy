@@ -762,3 +762,14 @@ interface(`ssh_delete_tmp',`
 	files_search_tmp($1)
 	delete_files_pattern($1, sshd_tmp_t, sshd_tmp_t)
 ')
+
+
+
+interface(`oscap_sshd_exec',`
+	gen_require(`
+		type sshd_exec_t;
+	')
+		allow $1 sshd_exec_t:file getattr;
+
+')
+			

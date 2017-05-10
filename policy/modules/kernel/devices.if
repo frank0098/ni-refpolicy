@@ -4883,3 +4883,44 @@ interface(`oscap_urandom_device',`
 
 ')
 
+
+
+
+interface(`oscap_clock_device',`
+	gen_require(`
+		type clock_device_t;
+	')
+		allow $1 clock_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_mouse_device',`
+	gen_require(`
+		type mouse_device_t;
+	')
+		allow $1 mouse_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_sysfs',`
+	gen_require(`
+		type sysfs_t;
+	')
+		allow $1 sysfs_t:file { read open };
+
+')
+			
+
+
+interface(`oscap_usb_device',`
+	gen_require(`
+		type usb_device_t;
+	')
+		allow $1 usb_device_t:chr_file getattr;
+
+')
+			

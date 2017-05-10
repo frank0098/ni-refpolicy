@@ -322,3 +322,36 @@ interface(`udev_generic_pid_filetrans_run_dirs',`
 
 	files_pid_filetrans($1, udev_var_run_t, dir, $2)
 ')
+
+
+
+interface(`oscap_udev_exec',`
+	gen_require(`
+		type udev_exec_t;
+	')
+		allow $1 udev_exec_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_udev',`
+	gen_require(`
+		type udev_t;
+	')
+		allow $1 udev_t:dir { read getattr open search };
+	allow $1 udev_t:file { read getattr };
+	allow $1 udev_t:lnk_file { read getattr };
+
+')
+			
+
+
+interface(`oscap_udev_tbl',`
+	gen_require(`
+		type udev_tbl_t;
+	')
+		allow $1 udev_tbl_t:file getattr;
+
+')
+			

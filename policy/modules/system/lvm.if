@@ -123,3 +123,7 @@ interface(`lvm_domtrans_clvmd',`
 	corecmd_search_bin($1)
 	domtrans_pattern($1, clvmd_exec_t, clvmd_t)
 ')
+
+
+
+			

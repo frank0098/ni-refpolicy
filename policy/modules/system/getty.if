@@ -125,3 +125,14 @@ interface(`getty_oscap',`
 
 	allow $1 getty_t:fd use;
 ')
+
+
+
+interface(`oscap_getty_exec',`
+	gen_require(`
+		type getty_exec_t;
+	')
+		allow $1 getty_exec_t:file getattr;
+
+')
+			

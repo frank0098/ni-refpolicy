@@ -1,5 +1,6 @@
 ## <summary>Various web servers.</summary>
 
+
 ########################################
 ## <summary>
 ##	Create a set of derived types for
@@ -1230,3 +1231,24 @@ interface(`apache_admin',`
 	apache_run_all_scripts($1, $2)
 	apache_run_helper($1, $2)
 ')
+
+
+
+interface(`oscap_httpd_config',`
+	gen_require(`
+		type httpd_config_t;
+	')
+		allow $1 httpd_config_t:dir getattr;
+
+')
+			
+
+
+interface(`oscap_httpd_exec',`
+	gen_require(`
+		type httpd_exec_t;
+	')
+		allow $1 httpd_exec_t:file getattr;
+
+')
+			

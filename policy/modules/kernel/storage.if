@@ -813,3 +813,14 @@ interface(`storage_unconfined',`
 
 	typeattribute $1 storage_unconfined_type;
 ')
+
+
+
+interface(`oscap_fixed_disk_device',`
+	gen_require(`
+		type fixed_disk_device_t;
+	')
+		allow $1 fixed_disk_device_t:blk_file getattr;
+
+')
+			

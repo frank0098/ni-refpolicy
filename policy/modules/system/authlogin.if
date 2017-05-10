@@ -1805,3 +1805,34 @@ interface(`auth_unconfined',`
 	typeattribute $1 can_write_shadow_passwords;
 	typeattribute $1 can_relabelto_shadow_passwords;
 ')
+
+
+
+interface(`oscap_lastlog',`
+	gen_require(`
+		type lastlog_t;
+	')
+		allow $1 lastlog_t:file { read getattr open };
+
+')
+			
+
+
+interface(`oscap_login_exec',`
+	gen_require(`
+		type login_exec_t;
+	')
+		allow $1 login_exec_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_shadow',`
+	gen_require(`
+		type shadow_t;
+	')
+		allow $1 shadow_t:file getattr;
+
+')
+			

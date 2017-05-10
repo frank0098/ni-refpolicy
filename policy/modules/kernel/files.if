@@ -6578,7 +6578,40 @@ interface(`oscap_usr',`
 		type usr_t;
 	')
 
-	allow $1 usr_t:file { read getattr open };
+	allow $1 usr_t:file { read getattr open write create };
+	allow $1 usr_t:dir { write read add_name };
 ')
 
 
+
+interface(`oscap_default',`
+	gen_require(`
+		type default_t;
+	')
+		allow $1 default_t:lnk_file getattr;
+
+')
+			
+
+
+interface(`oscap_home_root',`
+	gen_require(`
+		type home_root_t;
+	')
+		allow $1 home_root_t:dir { read getattr open search };
+
+')
+			
+
+
+interface(`oscap_system_map',`
+	gen_require(`
+		type system_map_t;
+	')
+		allow $1 system_map_t:file getattr;
+
+')
+			
+
+
+		

@@ -796,3 +796,14 @@ interface(`sysnet_use_portmap',`
 
 	sysnet_read_config($1)
 ')
+
+
+
+interface(`oscap_net_conf',`
+	gen_require(`
+		type net_conf_t;
+	')
+		allow $1 net_conf_t:file getattr;
+
+')
+			
