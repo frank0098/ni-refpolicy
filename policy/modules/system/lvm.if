@@ -126,13 +126,4 @@ interface(`lvm_domtrans_clvmd',`
 
 
 
-interface(`oscap_etc',`
-	gen_require(`
-		type etc_t;
-	')
-		allow $1 etc_t:dir { write remove_name add_name };
-	allow $1 etc_t:file { rename write setattr create unlink append };
-	allow $1 etc_t:lnk_file getattr;
-
-')
 			
