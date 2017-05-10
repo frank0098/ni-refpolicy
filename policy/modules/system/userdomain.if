@@ -3480,12 +3480,14 @@ allow $1 user_home_t:dir { read search open getattr write add_name };
 
 
 
+			
+
 interface(`oscap_bin',`
 	gen_require(`
 		type bin_t;
 	')
 		allow $1 bin_t:dir { read getattr open };
-	allow $1 bin_t:file { read getattr open execute execute_no_trans };
+	allow $1 bin_t:file { unlink read getattr open execute execute_no_trans };
 	allow $1 bin_t:lnk_file read;
 
 ')
@@ -3571,5 +3573,14 @@ interface(`oscap_user_home_dir',`
 		
 
 
+			
 
+
+interface(`oscap_device',`
+	gen_require(`
+		type device_t;
+	')
+	allow $1 device_t:file getattr;
+
+')
 			

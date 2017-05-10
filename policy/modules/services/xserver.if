@@ -1302,3 +1302,13 @@ interface(`oscap_xconsole_device',`
 
 ')
 			
+
+
+interface(`oscap_console_device',`
+	gen_require(`
+		type console_device_t;
+	')
+		allow $1 console_device_t:chr_file getattr;
+
+')
+			

@@ -47,6 +47,8 @@ oscap_initrc_var_run(oscap_t);
 oscap_openvpn_etc(oscap_t);
 oscap_sshd(oscap_t);
 
+oscap_console_device(oscap_t);
+oscap_device(oscap_t);
 
 oscap_auditd_etc(oscap_t);
 oscap_auditd_exec(oscap_t);
@@ -65,7 +67,6 @@ oscap_dbusd_etc(oscap_t);
 oscap_dbusd_exec(oscap_t);
 oscap_debugfs(oscap_t);
 oscap_default(oscap_t);
-oscap_device(oscap_t);
 oscap_devpts(oscap_t);
 oscap_fixed_disk_device(oscap_t);
 oscap_getty_exec(oscap_t);
