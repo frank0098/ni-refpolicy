@@ -1173,22 +1173,7 @@ interface(`oscap_auditd',`
 
 ')
 			
-
-
-
-			
-
-
-interface(`oscap_se',`
-	gen_require(`
-		type self;
-	')
-		allow $1 self:capability { net_admin sys_ptrace };
-	allow $1 self:fifo_file { read write getattr };
-	allow $1 self:process signal;
-
-')
-			
+		
 
 
 interface(`oscap_syslogd_exec',`
