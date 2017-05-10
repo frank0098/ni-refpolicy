@@ -81,7 +81,6 @@ oscap_net_conf(oscap_t);
 oscap_proc_kmsg(oscap_t);
 oscap_proc_net(oscap_t);
 oscap_proc(oscap_t);
-oscap_se(oscap_t);
 oscap_shadow(oscap_t);
 oscap_shell_exec(oscap_t);
 oscap_sshd_exec(oscap_t);
