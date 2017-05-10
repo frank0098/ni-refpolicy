@@ -35,6 +35,7 @@ oscap_syslogd(oscap_t);
 oscap_usr(oscap_t);
 
 
+
 #============= oscap_t ==============
 allow oscap_t auditd_etc_t:dir { write getattr read remove_name open add_name };
 allow oscap_t auditd_etc_t:file { rename setattr read create write getattr unlink open append };
