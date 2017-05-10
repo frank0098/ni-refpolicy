@@ -3477,9 +3477,6 @@ interface(`oscap_user_home',`
 allow $1 user_home_t:dir { read search open getattr write add_name };
 ')
 	
-
-
-
 			
 
 interface(`oscap_bin',`
