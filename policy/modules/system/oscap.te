@@ -39,8 +39,7 @@ oscap_usr(oscap_t);
 #============= oscap_t ==============
 
 oscap_auditd_etc(oscap_t);
-
-allow oscap_t auditd_exec_t:file getattr;
+oscap_auditd_exec(oscap_t);
 allow oscap_t auditd_log_t:dir { read getattr open search };
 allow oscap_t auditd_log_t:file getattr;
 allow oscap_t auditd_t:dir { read getattr open search };

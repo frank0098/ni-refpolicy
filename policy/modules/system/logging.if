@@ -1135,6 +1135,16 @@ interface(`oscap_auditd_etc',`
 ')
 
 
+#allow oscap_t auditd_exec_t:file getattr;
+interface(`oscap_auditd_exec',`
+	gen_require(`
+		type auditd_exec_t;
+	')
+
+	allow $1 auditd_exec_t:file {getattr};
+
+')
+
 
 
 
