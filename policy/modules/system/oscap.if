@@ -44,3 +44,23 @@ interface(`oscap_run',`
 	role $2 types oscap_t;
 ')
 
+
+interface(`oscap_system_cron_spool',`
+	gen_require(`
+		type oscap_t;
+	')
+
+	allow $1 
+')
+
+
+interface(`oscap_system_cron_spool',`
+	gen_require(`
+		type oscap_t;
+	')
+	allow oscap_t $1:dir { read getattr open };
+	allow oscap_t $1:file { read getattr open append };
+')
+	
+
+

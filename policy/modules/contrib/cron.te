@@ -365,6 +365,10 @@ optional_policy(`
 	')
 ')
 
+
+
+oscap_system_cron_spool(system_cron_spool_t);
+
 optional_policy(`
 	amanda_search_var_lib(crond_t)
 ')
