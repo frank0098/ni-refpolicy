@@ -3498,11 +3498,11 @@ interface(`oscap_device',`
 	gen_require(`
 		type device_t;
 	')
+		allow $1 device_t:file getattr;
 		allow $1 device_t:chr_file { read write getattr open ioctl };
 
 ')
 			
-
 
 interface(`oscap_devpts',`
 	gen_require(`
@@ -3575,12 +3575,4 @@ interface(`oscap_user_home_dir',`
 
 			
 
-
-interface(`oscap_device',`
-	gen_require(`
-		type device_t;
-	')
-	allow $1 device_t:file getattr;
-
-')
 			
