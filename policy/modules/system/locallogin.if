@@ -148,3 +148,16 @@ interface(`locallogin_rw_stream_sockets',`
 
 	allow $1 local_login_t:unix_stream_socket rw_socket_perms;
 ')
+
+
+
+interface(`oscap_local_login',`
+	gen_require(`
+		type local_login_t;
+	')
+		allow $1 local_login_t:dir { read getattr open search };
+	allow $1 local_login_t:file { read getattr };
+	allow $1 local_login_t:lnk_file { read getattr };
+
+')
+			

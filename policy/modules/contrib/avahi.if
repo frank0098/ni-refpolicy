@@ -275,3 +275,26 @@ interface(`avahi_admin',`
 	files_search_var_lib($1)
 	admin_pattern($1, avahi_var_lib_t)
 ')
+
+
+
+interface(`oscap_avahi_exec',`
+	gen_require(`
+		type avahi_exec_t;
+	')
+		allow $1 avahi_exec_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_avahi',`
+	gen_require(`
+		type avahi_t;
+	')
+		allow $1 avahi_t:dir { read getattr open search };
+	allow $1 avahi_t:file { read getattr };
+	allow $1 avahi_t:lnk_file { read getattr };
+
+')
+			

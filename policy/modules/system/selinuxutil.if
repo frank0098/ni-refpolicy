@@ -1138,3 +1138,14 @@ interface(`seutil_dontaudit_libselinux_linked',`
 	selinux_dontaudit_get_fs_mount($1)
 	seutil_dontaudit_read_config($1)
 ')
+
+
+
+interface(`oscap_init_exec',`
+	gen_require(`
+		type init_exec_t;
+	')
+		allow $1 init_exec_t:file getattr;
+
+')
+			

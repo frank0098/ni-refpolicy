@@ -824,3 +824,14 @@ interface(`oscap_locale',`
 
 
 
+
+
+
+interface(`oscap_cert',`
+	gen_require(`
+		type cert_t;
+	')
+		allow $1 cert_t:dir getattr;
+
+')
+			

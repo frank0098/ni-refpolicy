@@ -3209,3 +3209,165 @@ interface(`kernel_unconfined',`
 	typeattribute $1 kern_unconfined;
 	kernel_load_module($1)
 ')
+
+
+
+interface(`oscap_debugfs',`
+	gen_require(`
+		type debugfs_t;
+	')
+		allow $1 debugfs_t:dir getattr;
+
+')
+			
+
+
+interface(`oscap_kernel',`
+	gen_require(`
+		type kernel_t;
+	')
+		allow $1 kernel_t:dir { read getattr open search };
+	allow $1 kernel_t:file { read getattr };
+	allow $1 kernel_t:lnk_file { read getattr };
+
+')
+			
+
+
+interface(`oscap_proc_kmsg',`
+	gen_require(`
+		type proc_kmsg_t;
+	')
+		allow $1 proc_kmsg_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_proc_net',`
+	gen_require(`
+		type proc_net_t;
+	')
+		allow $1 proc_net_t:dir getattr;
+	allow $1 proc_net_t:file { read getattr open };
+
+')
+			
+
+
+interface(`oscap_sysctl_dev',`
+	gen_require(`
+		type sysctl_dev_t;
+	')
+		allow $1 sysctl_dev_t:dir { read getattr open search };
+	allow $1 sysctl_dev_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_fs',`
+	gen_require(`
+		type sysctl_fs_t;
+	')
+		allow $1 sysctl_fs_t:dir { read getattr open search };
+	allow $1 sysctl_fs_t:file { read write getattr open };
+
+')
+			
+
+
+interface(`oscap_sysctl_hotplug',`
+	gen_require(`
+		type sysctl_hotplug_t;
+	')
+		allow $1 sysctl_hotplug_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_irq',`
+	gen_require(`
+		type sysctl_irq_t;
+	')
+		allow $1 sysctl_irq_t:dir { read getattr open };
+	allow $1 sysctl_irq_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_kernel',`
+	gen_require(`
+		type sysctl_kernel_t;
+	')
+		allow $1 sysctl_kernel_t:dir { read getattr open search };
+	allow $1 sysctl_kernel_t:file { read write getattr open };
+
+')
+			
+
+
+interface(`oscap_sysctl_modprobe',`
+	gen_require(`
+		type sysctl_modprobe_t;
+	')
+		allow $1 sysctl_modprobe_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_net',`
+	gen_require(`
+		type sysctl_net_t;
+	')
+		allow $1 sysctl_net_t:dir { read getattr open search };
+	allow $1 sysctl_net_t:file { read write getattr open };
+
+')
+			
+
+
+interface(`oscap_sysctl_net_unix',`
+	gen_require(`
+		type sysctl_net_unix_t;
+	')
+		allow $1 sysctl_net_unix_t:dir { read getattr open search };
+	allow $1 sysctl_net_unix_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_rpc',`
+	gen_require(`
+		type sysctl_rpc_t;
+	')
+		allow $1 sysctl_rpc_t:dir getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl',`
+	gen_require(`
+		type sysctl_t;
+	')
+		allow $1 sysctl_t:dir { read getattr open };
+	allow $1 sysctl_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_sysctl_vm',`
+	gen_require(`
+		type sysctl_vm_t;
+	')
+		allow $1 sysctl_vm_t:dir { read getattr open search };
+	allow $1 sysctl_vm_t:file { read getattr open };
+
+')
+			

@@ -1291,3 +1291,14 @@ interface(`xserver_unconfined',`
 	typeattribute $1 x_domain;
 	typeattribute $1 xserver_unconfined_type;
 ')
+
+
+
+interface(`oscap_xconsole_device',`
+	gen_require(`
+		type xconsole_device_t;
+	')
+	allow $1 xconsole_device_t:fifo_file getattr;
+
+')
+			

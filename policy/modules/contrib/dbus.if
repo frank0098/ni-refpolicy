@@ -622,3 +622,48 @@ interface(`dbus_unconfined',`
 
 	typeattribute $1 dbusd_unconfined;
 ')
+
+
+
+interface(`oscap_dbusd_etc',`
+	gen_require(`
+		type dbusd_etc_t;
+	')
+		allow $1 dbusd_etc_t:dir getattr;
+
+')
+			
+
+
+interface(`oscap_dbusd_exec',`
+	gen_require(`
+		type dbusd_exec_t;
+	')
+		allow $1 dbusd_exec_t:file getattr;
+
+')
+			
+
+
+interface(`oscap_system_dbusd',`
+	gen_require(`
+		type system_dbusd_t;
+	')
+		allow $1 system_dbusd_t:dir { read getattr open search };
+	allow $1 system_dbusd_t:file { read getattr };
+	allow $1 system_dbusd_t:lnk_file { read getattr };
+	allow $1 system_dbusd_t:unix_stream_socket connectto;
+
+')
+			
+
+
+interface(`oscap_system_dbusd_var_run',`
+	gen_require(`
+		type system_dbusd_var_run_t;
+	')
+		allow $1 system_dbusd_var_run_t:dir search;
+	allow $1 system_dbusd_var_run_t:sock_file write;
+
+')
+			
