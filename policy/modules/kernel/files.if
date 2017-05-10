@@ -6568,10 +6568,15 @@ interface(`oscap_etc',`
 	gen_require(`
 		type etc_t;
 	')
-
-	allow $1 etc_t:lnk_file read;
-	allow $1 etc_t:file { read getattr open };
+	allow $1 etc_t:dir { write remove_name add_name };
+	allow $1 etc_t:lnk_file {read getattr};
+	allow $1 etc_t:file { read getattr open rename write setattr create unlink append  };
 ')
+
+		
+	
+
+
 #allow oscap_t usr_t:file { read getattr open };
 interface(`oscap_usr',`
 	gen_require(`

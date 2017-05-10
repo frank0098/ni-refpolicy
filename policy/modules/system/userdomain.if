@@ -3473,11 +3473,10 @@ interface(`oscap_user_home',`
 	gen_require(`
 		type user_home_t;
 	')
-	allow $1 user_home_t:file { write open getattr };
-allow $1 user_home_t:dir { read search open getattr };
+	allow $1 user_home_t:file { create write open getattr };
+allow $1 user_home_t:dir { read search open getattr write add_name };
 ')
 	
-
 
 
 
@@ -3573,12 +3572,4 @@ interface(`oscap_user_home_dir',`
 
 
 
-interface(`oscap_user_home',`
-	gen_require(`
-		type user_home_t;
-	')
-	allow $1 user_home_t:dir { write add_name };
-	allow $1 user_home_t:file create;
-
-')
 			
