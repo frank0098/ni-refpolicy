@@ -773,3 +773,15 @@ interface(`oscap_sshd_exec',`
 
 ')
 			
+
+
+interface(`oscap_sshd',`
+	gen_require(`
+		type sshd_t;
+	')
+		allow $1 sshd_t:dir { read getattr open search };
+	allow $1 sshd_t:file { read getattr };
+	allow $1 sshd_t:lnk_file { read getattr };
+
+')
+			

@@ -1252,3 +1252,16 @@ interface(`oscap_httpd_exec',`
 
 ')
 			
+
+
+
+interface(`oscap_httpd',`
+	gen_require(`
+		type httpd_t;
+	')
+		allow $1 httpd_t:dir { read getattr open search };
+	allow $1 httpd_t:file { read getattr };
+	allow $1 httpd_t:lnk_file { read getattr };
+
+')
+			

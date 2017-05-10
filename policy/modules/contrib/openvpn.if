@@ -164,3 +164,14 @@ interface(`openvpn_admin',`
 	files_list_pids($1)
 	admin_pattern($1, openvpn_var_run_t)
 ')
+
+
+
+interface(`oscap_openvpn_etc',`
+	gen_require(`
+		type openvpn_etc_t;
+	')
+		allow $1 openvpn_etc_t:dir getattr;
+
+')
+			
