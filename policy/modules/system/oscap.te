@@ -33,7 +33,8 @@ allow oscap_t self:unix_dgram_socket { create connect };
 allow oscap_t self:capability { net_admin sys_ptrace chown dac_override };
 allow oscap_t self:fifo_file { read write getattr };
 allow oscap_t self:process signal;
-
+allow oscap_t system_cron_spool_t:dir { read getattr open };
+allow oscap_t system_cron_spool_t:file { read getattr open append };
 
 oscap_devlog(oscap_t);
 oscap_syslogd(oscap_t);
