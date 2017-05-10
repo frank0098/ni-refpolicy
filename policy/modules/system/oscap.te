@@ -30,9 +30,11 @@ oscap_urandom_device(oscap_t);
 #allow oscap_t usr_t:file { read getattr open };
 
 allow oscap_t self:unix_dgram_socket { create connect };
-allow oscap_t self:capability { net_admin sys_ptrace };
+allow oscap_t self:capability { net_admin sys_ptrace chown dac_override };
 allow oscap_t self:fifo_file { read write getattr };
 allow oscap_t self:process signal;
+
+
 oscap_devlog(oscap_t);
 oscap_syslogd(oscap_t);
 oscap_usr(oscap_t);
@@ -40,6 +42,12 @@ oscap_usr(oscap_t);
 
 
 #============= oscap_t ==============
+
+oscap_httpd(oscap_t);
+oscap_initrc_var_run(oscap_t);
+oscap_openvpn_etc(oscap_t);
+oscap_sshd(oscap_t);
+
 
 oscap_auditd_etc(oscap_t);
 oscap_auditd_exec(oscap_t);
