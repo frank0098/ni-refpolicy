@@ -4924,3 +4924,62 @@ interface(`oscap_usb_device',`
 
 ')
 			
+
+
+interface(`oscap_kmsg_device',`
+	gen_require(`
+		type kmsg_device_t;
+	')
+		allow $1 kmsg_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_loop_control_device',`
+	gen_require(`
+		type loop_control_device_t;
+	')
+		allow $1 loop_control_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_memory_device',`
+	gen_require(`
+		type memory_device_t;
+	')
+		allow $1 memory_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_netcontrol_device',`
+	gen_require(`
+		type netcontrol_device_t;
+	')
+		allow $1 netcontrol_device_t:chr_file getattr;
+
+')
+			
+
+
+interface(`oscap_netcontrol_device',`
+	gen_require(`
+		type netcontrol_device_t;
+	')
+	
+')
+			
+
+
+interface(`oscap_random_device',`
+	gen_require(`
+		type random_device_t;
+	')
+	allow $1 random_device_t:chr_file getattr;
+
+')
+			
