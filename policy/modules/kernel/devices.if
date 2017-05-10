@@ -4966,13 +4966,7 @@ interface(`oscap_netcontrol_device',`
 			
 
 
-interface(`oscap_netcontrol_device',`
-	gen_require(`
-		type netcontrol_device_t;
-	')
-	
-')
-			
+		
 
 
 interface(`oscap_random_device',`
