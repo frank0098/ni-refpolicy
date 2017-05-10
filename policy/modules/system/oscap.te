@@ -7,7 +7,6 @@ policy_module(oscap, 1.0.0)
 
 
 
-
 type oscap_t;
 domain_type(oscap_t)
 
@@ -30,8 +29,6 @@ oscap_urandom_device(oscap_t);
 #allow oscap_t syslogd_t:unix_stream_socket connectto;
 #allow oscap_t usr_t:file { read getattr open };
 
-allow oscap_t self:unix_dgram_socket { create connect };
-allow oscap_t self:netlink_route_socket { write getattr read bind create nlmsg_read
 oscap_devlog(oscap_t);
 oscap_syslogd(oscap_t);
 oscap_usr(oscap_t);
