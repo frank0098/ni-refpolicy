@@ -45,14 +45,6 @@ interface(`oscap_run',`
 ')
 
 
-interface(`oscap_system_cron_spool',`
-	gen_require(`
-		type oscap_t;
-	')
-
-	allow $1 
-')
-
 
 interface(`oscap_system_cron_spool',`
 	gen_require(`
