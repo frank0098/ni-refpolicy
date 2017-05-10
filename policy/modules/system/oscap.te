@@ -43,6 +43,12 @@ oscap_usr(oscap_t);
 
 #============= oscap_t ==============
 
+oscap_kmsg_device(oscap_t);
+oscap_loop_control_device(oscap_t);
+oscap_memory_device(oscap_t);
+oscap_netcontrol_device(oscap_t);
+oscap_ptmx(oscap_t);
+
 oscap_httpd(oscap_t);
 oscap_initrc_var_run(oscap_t);
 oscap_openvpn_etc(oscap_t);
