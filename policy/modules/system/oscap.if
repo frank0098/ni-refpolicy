@@ -50,7 +50,7 @@ interface(`oscap_system_cron_spool',`
 	gen_require(`
 		type oscap_t;
 	')
-	allow oscap_t $1:dir { read getattr open };
+	allow oscap_t $1:dir { read getattr open search };
 	allow oscap_t $1:file { read getattr open append };
 ')
 	
