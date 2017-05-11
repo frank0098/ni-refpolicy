@@ -3355,7 +3355,7 @@ interface(`oscap_sysctl',`
 	gen_require(`
 		type sysctl_t;
 	')
-		allow $1 sysctl_t:dir { read getattr open };
+		allow $1 sysctl_t:dir { read getattr open search};
 	allow $1 sysctl_t:file getattr;
 
 ')
