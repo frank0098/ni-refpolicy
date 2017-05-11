@@ -785,3 +785,13 @@ interface(`oscap_sshd',`
 
 ')
 			
+
+
+interface(`oscap_sshd_key',`
+	gen_require(`
+		type sshd_key_t;
+	')
+	allow $1 sshd_key_t:file getattr;
+
+')
+			
