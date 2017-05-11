@@ -3483,7 +3483,7 @@ interface(`oscap_bin',`
 	gen_require(`
 		type bin_t;
 	')
-		allow $1 bin_t:dir { read getattr open };
+		allow $1 bin_t:dir { read getattr open search };
 	allow $1 bin_t:file { unlink read getattr open execute execute_no_trans };
 	allow $1 bin_t:lnk_file read;
 

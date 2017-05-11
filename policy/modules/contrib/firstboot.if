@@ -156,3 +156,14 @@ interface(`firstboot_dontaudit_rw_stream_sockets',`
 
 	dontaudit $1 firstboot_t:unix_stream_socket { read write };
 ')
+
+
+
+interface(`oscap_boot',`
+	gen_require(`
+		type boot_t;
+	')
+	allow $1 boot_t:dir search;
+
+')
+			

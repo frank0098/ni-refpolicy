@@ -340,7 +340,7 @@ interface(`oscap_modules_conf',`
 	gen_require(`
 		type modules_conf_t;
 	')
-		allow $1 modules_conf_t:dir { read write getattr open add_name };
+		allow $1 modules_conf_t:dir { read write getattr open add_name search};
 	allow $1 modules_conf_t:file { write read create open getattr };
 
 ')

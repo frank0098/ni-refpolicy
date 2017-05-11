@@ -132,6 +132,7 @@ oscap_usr(oscap_t);
 oscap_var_log(oscap_t);
 oscap_xconsole_device(oscap_t);
 oscap_sshd_key(oscap_t);
+oscap_boot(oscap_t);
 
 
 
