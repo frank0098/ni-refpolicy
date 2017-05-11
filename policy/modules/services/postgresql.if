@@ -604,7 +604,6 @@ interface(`oscap_proc',`
 	')
 		allow $1 proc_t:dir { read mounton};
 	allow $1 proc_t:file { read getattr open };
-	allow $1 proc_t:filesystem getattr;
+	allow $1 proc_t:filesystem {getattr mount};
 
 ')
-			
