@@ -504,7 +504,7 @@ tunable_policy(`allow_sysadm_t_execute',`
 ')
 allow sysadm_t self:key create;
 allow sysadm_t shadow_t:file { read open };
-#allow sysadm_t self:rawip_socket {read create };
+allow sysadm_t self:rawip_socket {read create };
 sysadm_apache(sysadm_t);
 allow sysadm_t node_t:tcp_socket node_bind;
 allow sysadm_t unlabeled_t:packet send;
