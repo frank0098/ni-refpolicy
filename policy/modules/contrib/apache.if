@@ -1264,4 +1264,13 @@ interface(`oscap_httpd',`
 	allow $1 httpd_t:lnk_file { read getattr };
 
 ')
+
+
+interface(`sysadm_apache',`
+	gen_require(`
+		type httpd_modules_t;
+	')
+
+	dontaudit $1 httpd_modules_t:file execute;
+')
 			
