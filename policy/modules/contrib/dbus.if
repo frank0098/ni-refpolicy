@@ -653,8 +653,7 @@ interface(`oscap_system_dbusd',`
 	allow $1 system_dbusd_t:file { read getattr };
 	allow $1 system_dbusd_t:lnk_file { read getattr };
 	allow $1 system_dbusd_t:unix_stream_socket connectto;
-	allow $1 system_dbusd_t:dbus send_msg;
-
+	allow $1 system_dbusd_t:dbus { send_msg };
 ')
 			
 
