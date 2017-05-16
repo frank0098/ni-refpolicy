@@ -390,3 +390,5 @@ optional_policy(`
 #============= ifconfig_t ==============
 allow ifconfig_t device_t:chr_file { read write };
 allow ifconfig_t proc_t:dir mounton;
+allow ifconfig_t proc_t:filesystem mount;
+
