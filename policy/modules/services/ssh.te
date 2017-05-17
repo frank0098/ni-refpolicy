@@ -383,7 +383,6 @@ allow ssh_t proc_t:dir mounton;
 allow ssh_t self:capability sys_admin;
 allow ssh_t unlabeled_t:packet {recv send};
 
-allow sshd_t http_port_t:tcp_socket name_bind;
 
 
 
